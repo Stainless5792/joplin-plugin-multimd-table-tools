@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-multimd-table-tools",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
     "prepare": "npm run dist",
@@ -35,7 +35,7 @@
     "@codemirror/state": "6.4.1"
   },
   "dependencies": {
-    "@felisdiligens/md-table-tools": "^0.1.0",
+    "@felisdiligens/md-table-tools": "^0.1.3",
     "turndown": "^7.1.2"
   }
 }
