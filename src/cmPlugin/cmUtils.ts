@@ -302,14 +302,14 @@ export async function replaceRange(cm, context, getNewRange: Function, done: Fun
             if (done)
                 done({ row: selection.row, column: selection.column });
         }
-        catch (error) {
+        catch (e) {
             await context.postMessage({
                 name: 'alert',
-                text: error.toString(),
+                text: e.toString(),
                 title: "Error"
             });
             if (error)
-                error(error);
+                error(e);
         }
     }
     else {
