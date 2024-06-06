@@ -224,7 +224,7 @@ module.exports = {
 
             CodeMirror.defineExtension('tableMoveColumnRight', replaceRangeFunc(context, async (table, selection, settings) => {
                 const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
-                let newIndex = Math.max(parseInt(selection.column) + 1, parsedTable.columnCount());
+                let newIndex = Math.min(parseInt(selection.column) + 1, parsedTable.columnCount()-1);
                 parsedTable.moveColumn(selection.column, newIndex);
                 parsedTable.update();
                 return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
@@ -256,7 +256,7 @@ module.exports = {
 
             CodeMirror.defineExtension('tableMoveColumnLeft', replaceRangeFunc(context, async (table, selection, settings) => {
                 const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
-                let newIndex = Math.min(parseInt(selection.column) - 1, parsedTable.columnCount());
+                let newIndex = Math.max(parseInt(selection.column) - 1, 0);
                 parsedTable.moveColumn(selection.column, newIndex);
                 parsedTable.update();
                 return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);

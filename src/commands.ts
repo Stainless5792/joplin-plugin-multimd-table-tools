@@ -261,7 +261,7 @@ const commands : Command[] = [
         name: "tableMoveColumnRight",
         label: "Column (↔): Move Right",
         iconName: null,
-        accelerator: "OptionOrAlt+Shift+M",
+        accelerator: "CmdOrCtrl+Shift+M",
         add: {
             toContextMenu: true,
             toToolsMenu: "tableToolsColumn",
@@ -274,7 +274,7 @@ const commands : Command[] = [
         name: "tableMoveColumnLeft",
         label: "Column (↔): Move Left",
         iconName: null,
-        accelerator: "OptionOrAlt+Shift+K",
+        accelerator: "CmdOrCtrl+Shift+K",
         add: {
             toContextMenu: true,
             toToolsMenu: "tableToolsColumn",
