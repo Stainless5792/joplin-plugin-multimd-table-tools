@@ -261,7 +261,7 @@ const commands : Command[] = [
         name: "tableDeleteColumn",
         label: "Column (-): Delete",
         iconName: null,
-        accelerator: null,
+        accelerator: "CmdOrCtrl+Shift+D",
         add: {
             toContextMenu: true,
             toToolsMenu: "tableToolsColumn",
