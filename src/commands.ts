@@ -259,7 +259,7 @@ const commands : Command[] = [
     },
     {
         name: "tableMoveColumnRight",
-        label: "Column (↔): Move Right",
+        label: "Column (->): Move Right",
         iconName: null,
         accelerator: "CmdOrCtrl+Shift+M",
         add: {
@@ -272,7 +272,7 @@ const commands : Command[] = [
     },
     {
         name: "tableMoveColumnLeft",
-        label: "Column (↔): Move Left",
+        label: "Column (<-): Move Left",
         iconName: null,
         accelerator: "CmdOrCtrl+Shift+K",
         add: {
