@@ -250,7 +250,7 @@ const commands : Command[] = [
         iconName: null,
         accelerator: "OptionOrAlt+Shift+M",
         add: {
-            toContextMenu: false,
+            toContextMenu: true,
             toToolsMenu: "tableToolsColumn",
             asToolbarButton: false
         },
