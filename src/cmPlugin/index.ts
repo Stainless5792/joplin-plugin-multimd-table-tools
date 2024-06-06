@@ -190,16 +190,21 @@ module.exports = {
 
             CodeMirror.defineExtension('tableDeleteColumn', replaceRangeFunc(context, async (table, selection, settings) => {
                 const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
-                let result = await context.postMessage({
-                    name: 'confirm',
-                    text: "Are you sure you want to delete the current column?",
-                    title: "Delete column?"
-                });
-                if (result.confirm) {
-                    parsedTable.removeColumn(selection.column);
-                    parsedTable.update();
-                    return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
-                }
+                parsedTable.removeColumn(selection.column);
+                parsedTable.update();
+                return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+
+                // const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
+                // let result = await context.postMessage({
+                //     name: 'confirm',
+                //     text: "Are you sure you want to delete the current column?",
+                //     title: "Delete column?"
+                // });
+                // if (result.confirm) {
+                //     parsedTable.removeColumn(selection.column);
+                //     parsedTable.update();
+                //     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                // }
             }));
 
             CodeMirror.defineExtension('tableMoveColumn', replaceRangeFunc(context, async (table, selection, settings) => {
@@ -215,6 +220,70 @@ module.exports = {
                     parsedTable.update();
                     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
                 }
+            }));
+
+            CodeMirror.defineExtension('tableMoveColumnRight', replaceRangeFunc(context, async (table, selection, settings) => {
+                const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
+                let newIndex = Math.max(parseInt(selection.column) + 1, parsedTable.columnCount());
+                parsedTable.moveColumn(selection.column, newIndex);
+                parsedTable.update();
+                return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                
+                // let result = await context.postMessage({
+                //     name: "dialog.moveColumn",
+                //     currentIndex: selection.column,
+                //     columnCount: parsedTable.columnCount()
+                // });
+                // if (result.confirm) {
+                //     let newIndex = parseInt(result.formData.newindex) - 1;
+                //     parsedTable.moveColumn(selection.column, newIndex);
+                //     parsedTable.update();
+                //     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                // }
+                // const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
+                // let result = await context.postMessage({
+                //     name: "dialog.moveColumn",
+                //     currentIndex: selection.column,
+                //     columnCount: parsedTable.columnCount()
+                // });
+                // if (result.confirm) {
+                //     let newIndex = parseInt(result.formData.newindex) - 1;
+                //     parsedTable.moveColumn(selection.column, newIndex);
+                //     parsedTable.update();
+                //     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                // }
+            }));
+
+            CodeMirror.defineExtension('tableMoveColumnLeft', replaceRangeFunc(context, async (table, selection, settings) => {
+                const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
+                let newIndex = Math.min(parseInt(selection.column) - 1, parsedTable.columnCount());
+                parsedTable.moveColumn(selection.column, newIndex);
+                parsedTable.update();
+                return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+
+                // let result = await context.postMessage({
+                //     name: "dialog.moveColumn",
+                //     currentIndex: selection.column,
+                //     columnCount: parsedTable.columnCount()
+                // });
+                // if (result.confirm) {
+                //     let newIndex = parseInt(result.formData.newindex) - 1;
+                //     parsedTable.moveColumn(selection.column, newIndex);
+                //     parsedTable.update();
+                //     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                // }
+                // const parsedTable = getMarkdownParser(settings.selectedFormat).parse(table);
+                // let result = await context.postMessage({
+                //     name: "dialog.moveColumn",
+                //     currentIndex: selection.column,
+                //     columnCount: parsedTable.columnCount()
+                // });
+                // if (result.confirm) {
+                //     let newIndex = parseInt(result.formData.newindex) - 1;
+                //     parsedTable.moveColumn(selection.column, newIndex);
+                //     parsedTable.update();
+                //     return getMarkdownRenderer(settings.selectedFormat, true).render(parsedTable);
+                // }
             }));
             
 

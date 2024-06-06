@@ -258,6 +258,32 @@ const commands : Command[] = [
         execute: editorExecCommand("tableMoveColumn")
     },
     {
+        name: "tableMoveColumnRight",
+        label: "Column (↔): Move Right",
+        iconName: null,
+        accelerator: "OptionOrAlt+Shift+M",
+        add: {
+            toContextMenu: true,
+            toToolsMenu: "tableToolsColumn",
+            asToolbarButton: false
+        },
+        condition: CommandCondition.CursorInTable,
+        execute: editorExecCommand("tableMoveColumnRight")
+    },
+    {
+        name: "tableMoveColumnLeft",
+        label: "Column (↔): Move Left",
+        iconName: null,
+        accelerator: "OptionOrAlt+Shift+K",
+        add: {
+            toContextMenu: true,
+            toToolsMenu: "tableToolsColumn",
+            asToolbarButton: false
+        },
+        condition: CommandCondition.CursorInTable,
+        execute: editorExecCommand("tableMoveColumnLeft")
+    },
+    {
         name: "tableDeleteColumn",
         label: "Column (-): Delete",
         iconName: null,

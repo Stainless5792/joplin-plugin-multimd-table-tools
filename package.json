@@ -1,5 +1,5 @@
 {
-  "name": "joplin-plugin-multimd-table-tools_mky",
+  "name": "joplin-plugin-multimd-table-tools_kyma",
   "version": "1.2.1-kyma",
   "scripts": {
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
