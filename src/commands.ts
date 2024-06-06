@@ -248,7 +248,7 @@ const commands : Command[] = [
         name: "tableMoveColumn",
         label: "Column (↔): Move",
         iconName: null,
-        accelerator: null,
+        accelerator: "OptionOrAlt+Shift+M",
         add: {
             toContextMenu: false,
             toToolsMenu: "tableToolsColumn",
@@ -261,7 +261,7 @@ const commands : Command[] = [
         name: "tableDeleteColumn",
         label: "Column (-): Delete",
         iconName: null,
-        accelerator: "CmdOrCtrl+Shift+D",
+        accelerator: "OptionOrAlt+Shift+D",
         add: {
             toContextMenu: true,
             toToolsMenu: "tableToolsColumn",
@@ -274,7 +274,7 @@ const commands : Command[] = [
         name: "tableTextAlignLeft",
         label: "Text: Align left ←",
         iconName: "fas fa-align-left",
-        accelerator: null,
+        accelerator: "OptionOrAlt+Shift+Left",
         add: {
             toContextMenu: false,
             toToolsMenu: "tableToolsText",
@@ -287,7 +287,7 @@ const commands : Command[] = [
         name: "tableTextAlignCenter",
         label: "Text: Align center ↔",
         iconName: "fas fa-align-center",
-        accelerator: null,
+        accelerator: "OptionOrAlt+Shift+C",
         add: {
             toContextMenu: false,
             toToolsMenu: "tableToolsText",
